@@ -11,7 +11,7 @@ def mult():
     print(mult,"\n")
 
 def div():
-    div = a * b
+    div = a / b
     print(div,"\n")
 
 func_dict = {'add':add,'sub':sub,"mult":mult,"div":div}
