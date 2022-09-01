@@ -1,3 +1,5 @@
+import math
+
 def add():  
     sum = a + b
     print(sum,"\n")
@@ -14,26 +16,46 @@ def div():
     div = a / b
     print(div,"\n")
 
-op_dictionary = {'add':add,'sub':sub,"mult":mult,"div":div}
+def squareroot():
+    rootof = math.sqrt(a)
+    print(rootof,"\n")
+
+op_dictionary = {'add':add,'sub':sub,"mult":mult,"div":div,"sqrt":squareroot}
 
 while True:
     try:
-        a = float(input("X >"))
-        b = float(input("Y >"))
-
-    except ValueError:
-        print('Try using integers or floats')
-        continue
-
-    break
-
-while True:
-    try:
-        oper = input("Functions: \n add, sub, mult, by \n => ? ")
-        op_dictionary[oper]()
-
+        func_call = input("operator call")
+        
+        if func_call not in op_dictionary:
+            print("Try Again")
+            continue
+        else:
+            break
+        
     except KeyError:
-        print("Try using a valid operator.")
+        print('Consider using a valid operator, \n => add, sub, mult, div')
         continue
 
-    break
+while True:
+    if func_call == "sqrt":   
+        try:    
+            a = int(input("X >"))
+            op_dictionary[func_call]()
+            break
+
+        except ValueError:
+            print("Try using integers or floats")
+            continue
+
+    else:
+        try:
+            a = int(input("x >"))
+            b = int(input("Y >"))
+            op_dictionary[func_call]()
+            break
+
+        except ValueError:
+            print("Try using integers or floats")
+            continue
+
+# © Prince Santhosh/nmhappu
