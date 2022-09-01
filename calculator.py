@@ -14,12 +14,26 @@ def div():
     div = a / b
     print(div,"\n")
 
-func_dict = {'add':add,'sub':sub,"mult":mult,"div":div}
+op_dictionary = {'add':add,'sub':sub,"mult":mult,"div":div}
 
-a = int(input("X > "))
-b = int(input("Y > "))
+while True:
+    try:
+        a = float(input("X >"))
+        b = float(input("Y >"))
 
-#print(a+b)
+    except ValueError:
+        print('Try using integers or floats')
+        continue
 
-call_func = input("op > ")
-func_dict[call_func]()
+    break
+
+while True:
+    try:
+        oper = input("Functions: \n add, sub, mult, by \n => ? ")
+        op_dictionary[oper]()
+
+    except KeyError:
+        print("Try using a valid operator.")
+        continue
+
+    break
