@@ -1,24 +1,24 @@
 import math
 
 def add():  
-    sum = a + b
-    print(sum,"\n")
+    result = a + b
+    print(result,"\n")
 
 def sub():
-    sub = a - b
-    print(sub,"\n")
+    result = a - b
+    print(result,"\n")
 
 def mult():
-    mult = a * b
-    print(mult,"\n")
+    result = a * b
+    print(result,"\n")
 
 def div():
-    div = a / b
-    print(div,"\n")
+    result = a / b
+    print(result,"\n")
 
 def squareroot():
-    rootof = math.sqrt(a)
-    print(rootof,"\n")
+    result = math.sqrt(a)
+    print(result,"\n")
 
 op_dictionary = {'add':add,'sub':sub,"mult":mult,"div":div,"sqrt":squareroot}
 
