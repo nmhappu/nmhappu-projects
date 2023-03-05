@@ -10,7 +10,7 @@ y = s2
 #----common.ratio
 
 cr = s2 / s1
-cr = int(cr)
+cr = int(cr) #float to int
 
 print("a1 =", s2,"/",s1)
 print("with common.ratio =",cr)
