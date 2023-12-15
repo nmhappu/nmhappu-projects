@@ -29,7 +29,7 @@ h_con = mysql.connector.connect(
 
 cursor.execute("USE hospitalm")
 
-cursor.execute("CREATE TABLE users(IDNo INT, Regdat DATE, Name CHAR(15), Age INT, Gender CHAR(1))") # Creating a 'users' table
+cursor.execute("CREATE TABLE users(idno INT, Regdat DATE, name CHAR(15), age INT, gender CHAR(1))") # Creating a 'users' table
 
-cursor.execute("CREATE TABLE docs(Name CHAR(15), Gender CHAR(1), Dept CHAR(5), Exp INT, Fee INT)") # Creating a 'docs' table
+cursor.execute("CREATE TABLE docs(name CHAR(15), gender CHAR(1), dept CHAR(5), exp INT, fee INT)") # Creating a 'docs' table
 print("Database Created.")
