@@ -109,8 +109,8 @@ while True:
             age = int(input("Enter The Patient's age: "))
             gender = input("Enter The Patient's Gender(F/M): ")
             q = "insert into users values({},'{}','{}',{},'{}')'".format(
-                idno, Regdat, name, age, gender
-            )
+                idno, Regdat, name, age, gender)
+                
             h_obj.execute(q)
             print("Values Added")
             con.commit()
@@ -166,13 +166,13 @@ while True:
 
         if c2 == 5:
             h_obj.execute("select * from docs where dept = 'GS'")
-            p = h_obj.fetchallO
+            p = h_obj.fetchall()
             for i in p:
-                print()
+                print(i)
 
         if c2 == 6:
             h_obj.execute("select * from docs where dept ='ped")
-            p = h_obj.fetchallQ
+            p = h_obj.fetchall()
             for i in p:
                 print(i)
 
@@ -180,13 +180,13 @@ while True:
             h_obj.execute("select * from docs where dept='nur")
             p = h_obj.fetchall()
             for i in p:
-                print()
+                print(i)
 
         if c2 == 8:
             h_obj.execute("select * from docs where dept = 'NS")
             p = h_obj.fetchall()
             for i in p:
-                print()
+                print(i)
 
         if c2 == 9:
             h_obj.execute("select * from docs where dept = 'PS'")
