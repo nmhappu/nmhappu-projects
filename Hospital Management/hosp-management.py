@@ -53,8 +53,8 @@ while True:
 
     if ch == 1:
         idno = int(input("Enter the UserID: "))
-        name = input("Enter The Patient's Name:")
-        reg_date = input("Today's Date(YYYY/MM/DD):")
+        name = input("Enter The Patient's Name: ")
+        reg_date = input("Today's Date(YYYY/MM/DD): ")
         age = int(input("Enter The Patient's age: "))
         gender = input("Enter The Patient's Gender(F/M): ")
 
@@ -76,7 +76,7 @@ while True:
     elif ch == 3:
         print(hos_doctors)
 
-        doc_choice = int(input("Enter Your Choice:"))
+        doc_choice = int(input("Enter Your Choice: "))
 
         dept_mapping = {
             1: "psy",
@@ -98,6 +98,7 @@ while True:
         doctors = cursor.fetchall()
         for doctor in doctors:
             print(doctor)
+        print()
 
     elif ch == 4:
         exit()
@@ -106,3 +107,4 @@ while True:
 # planning to replace ch with "users_choice"
 # replaced with dictionary, will be reverted for readability.
 # corrected .format()
+# corrected dictionary search with appropriate 

@@ -43,7 +43,7 @@ List of Departments
 
 while True:
     print(
-        """1. Add New Doctors\n2. List Available Departments\n3. Delete Doctors\n4. Log Out"""
+        """1. Add New Doctors\n2. List Available Departments\n3. Delete Doctors\n4. Log Out\n"""
     )
 
     ch = int(input("Enter Your Choice: "))
