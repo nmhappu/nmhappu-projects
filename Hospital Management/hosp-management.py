@@ -92,7 +92,7 @@ while True:
         }
 
         cursor.execute(
-            "SELECT * FROM docs WHERE dept = '{}'".format(dept_mapping.get(doc_choice))
+            "SELECT * FROM docs WHERE dept like '{}%'".format(dept_mapping.get(doc_choice))
         )
 
         doctors = cursor.fetchall()
