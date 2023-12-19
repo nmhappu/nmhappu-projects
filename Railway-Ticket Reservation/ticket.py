@@ -1,26 +1,29 @@
 import mysql.connector
 
-con = mysql.connector.connect(host="localhost", user="root", password="root", database="Railway_system")
+con = mysql.connector.connect(host="localhost", user="root", password="root")
 
 if con.is_connected():
-    print("Connected")
+    print("Connected\n")
 else:
-    print("Not connected")
+    print("Not connected\n")
 
 cursor = con.cursor()
 
 #Dropping and creating a new database named "Railway_system"
 
-cursor.execute("DROP DATABASE Railway_system")
-cursor.execute("CREATE DATABASE Railway_system")
+cursor.execute("DROP DATABASE IF EXISTS Railway_system")
+cursor.execute("CREATE DATABASE IF NOT EXISTS Railway_system")
+
+print("Database created.\n")
+
 cursor.execute("USE Railway_system")
 
 #Creating 4 tables named "Ticket_Reservation", "book_food", "passenger"
 
-cursor.execute("CREATE TABLE Ticket_Reservation (Train_no int primary key, Train_name char(50), Source char(50), Destination char(50), Ticket_fare int, Arriving_time varchar(50), Departure_time varchar(50), Day char(10))")
-cursor.execute("CREATE TABLE book_food(type char(12), item char(12), pno char(15), name char(12), coach char(10))")
-cursor.execute("CREATE TABLE passenger (Tno int, Tname char(20), sstn char(20), DS char(20), Name char(15), Age int, Gender char(1), Coach_class char(15), Phone_Number int)")
-cursor.execute("CREATE TABLE food(Type char(25), Item char(25), Price int)")
+cursor.execute("CREATE TABLE IF NOT EXISTS Ticket_Reservation (Train_no int primary key, Train_name char(50), Source char(50), Destination char(50), Ticket_fare int, Arriving_time varchar(50), Departure_time varchar(50), Day char(10))")
+cursor.execute("CREATE TABLE IF NOT EXISTS book_food(type char(12), item char(12), pno char(15), name char(12), coach char(10))")
+cursor.execute("CREATE TABLE IF NOT EXISTS passenger (Tno int, Tname char(20), sstn char(20), DS char(20), Name char(15), Age int, Gender char(1), Coach_class char(15), Phone_Number int)")
+cursor.execute("CREATE TABLE IF NOT EXISTS food(Type char(25), Item char(25), Price int)")
 
 #Inserting details of food
 
@@ -108,6 +111,7 @@ while ans == 'y':
 
         tb = "INSERT INTO passenger values({}, '{}', '{}', '{}', '{}', {}, '{}', '{}', {})".format(
             too, trname, sstn, dstn, name, age, gen, cls, ph)
+        
         cursor.execute(tb)
 
         con.commit()
