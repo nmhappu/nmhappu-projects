@@ -3,7 +3,6 @@
 #include <unordered_map>
 #include <functional>
 
-
 /* wsl */
 
 int x; 
@@ -36,8 +35,6 @@ int main() {
 
     std::cout << "Y => ";
         std::cin >> y;
-
-    
 
     functions[s]();
     return 0 ;

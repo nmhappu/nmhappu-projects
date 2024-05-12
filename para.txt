@@ -1,0 +1,29 @@
+Wikis are enabled by wiki software
+otherwise known as wiki engines
+A wiki engine, being a form of a content management system
+differs from other web-based systems such as blog software or static site generators
+in that the content is created without any defined owner or leader
+and wikis have little inherent structure
+allowing structure to emerge according to the needs of the users.
+
+a_count = 0
+m_count = 0
+
+def am_count(a):
+    global a_count
+    global m_count
+    for i in a:
+        for j in i:
+            if j.lower() == "a":
+                a_count = a_count + 1
+            elif j.lower() == "m":
+                m_count = m_count + 1
+
+x = open("para.txt")
+word = x.readlines()
+
+am_count(word)
+
+print("Number of A's = ",a_count)
+print("Number of M's = ",m_count)
+
